@@ -10,7 +10,7 @@ import (
 func main() {
 	r := httprouter.Router{}
 	routes(&r)
-	http.ListenAndServe(":9090", &r)
+	http.ListenAndServe(":8080", &r)
 }
 
 func routes(r *httprouter.Router) {

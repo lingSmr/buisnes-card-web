@@ -1,0 +1,50 @@
+package main
+
+import (
+	"github.com/julienschmidt/httprouter"
+	"net/http"
+	"path"
+	"text/template"
+)
+
+func main() {
+	r := httprouter.Router{}
+	routes(&r)
+	http.ListenAndServe(":9090", &r)
+}
+
+func routes(r *httprouter.Router) {
+	r.ServeFiles("/public/*filepath", http.Dir("public"))
+	r.GET("/", StartPage)
+	r.GET("/prikol", PrikolPage)
+}
+
+func StartPage(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	path := path.Join("public", "html", "StartPage.html")
+	tmpl, err := template.ParseFiles(path)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	err = tmpl.Execute(w, nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
+
+func PrikolPage(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	path := path.Join("public", "html", "prikol.html")
+	tmpl, err := template.ParseFiles(path)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	err = tmpl.Execute(w, nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}

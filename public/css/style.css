@@ -1,0 +1,166 @@
+
+*, ::before , ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cormorant Unicase", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+h1 , h2 , h3 {
+    margin: 0;
+}
+
+.header{
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    color: gray;
+}
+
+.header_logo{
+    
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero{
+    margin-top: -30px;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(290px , 1fr));
+    grid-gap: 20px;
+}
+
+.hero_about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero_title{
+    margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.hero_subtitle{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.hero_links{
+    display: flex;
+}
+
+.hero_link{
+    margin-right: 10px;
+    font-size: 30px;
+    color: black;
+    transition: color 0.3s;
+}
+
+.hero_link:hover{
+    color: brown;
+}
+
+.hero_box{
+    max-width: 500px;
+    justify-self: center;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+    border: 5px solid white;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    animation: ava-animation 5s infinite alternate;
+}
+
+.hero_box-img{
+    animation: ava-bg 5s infinite alternate;
+}
+
+@media screen and (max-width: 978px){
+    .hero{
+        padding-top: 10px;
+    }
+
+    .hero_container{
+        grid-row-gap: 20px;
+    }
+
+    .hero_title{
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero_subtitle{
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .hero_description{
+        font-size: 14px;
+    }
+
+    .hero_about{
+        text-align: center;
+    }
+
+    .hero_links{
+        justify-content: center;
+    }
+
+    .hero_box{
+        max-width: 350px;
+    }
+}
+
+@keyframes ava-animation{
+    0%{
+        border-radius:38% 62% 61% 39% / 37% 54% 46% 63%  ;
+    }
+
+    40%{
+        border-radius: 53% 47% 37% 63% / 50% 34% 66% 50% ;
+    }
+
+    60%{
+        border-radius: 41% 59% 33% 67% / 68% 59% 41% 32% ;
+    }
+
+    100%{
+    border-radius: 33% 67% 25% 75% / 58% 25% 75% 42% ;        
+    }
+
+}
+
+@keyframes ava-bg{
+    from{
+        backdrop-filter: hue-rotate(0);
+    }
+
+    to{
+        backdrop-filter: hue-rotate(90deg) ;
+    }
+}

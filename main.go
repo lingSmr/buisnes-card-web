@@ -1,12 +1,11 @@
 package main
 
 import (
+	"github.com/julienschmidt/httprouter"
 	"log"
 	"net/http"
 	"path"
 	"text/template"
-
-	"github.com/julienschmidt/httprouter"
 )
 
 func main() {

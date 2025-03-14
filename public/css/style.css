@@ -4,6 +4,7 @@
 }
 
 body {
+    margin: 0;
     font-family: "Cormorant Unicase", serif;
     font-weight: 500;
     font-style: normal;
@@ -34,7 +35,7 @@ h1 , h2 , h3 {
 }
 
 .hero{
-    margin-top: -30px;
+    margin-top: -50px;
     min-height: 100vh; 
     display: flex;
     justify-content: center;
@@ -102,6 +103,7 @@ h1 , h2 , h3 {
 
 @media screen and (max-width: 978px){
     .hero{
+        padding-bottom: 40px;
         padding-top: 10px;
     }
 
@@ -164,3 +166,75 @@ h1 , h2 , h3 {
         backdrop-filter: hue-rotate(90deg) ;
     }
 }
+
+.transition{
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.transition-ref{
+    text-decoration: none;
+    
+    color: black;
+}
+
+.border-title{   
+    margin: 0 auto 0 auto;
+}
+
+.border-line{
+    margin: 0 auto 0 auto;
+    border-radius: 3px;
+    width: 20%;   
+    border-bottom: 4px solid rgba(187, 187, 187, 0.226) ;
+
+}
+
+.info{
+    min-height: 105vh;
+    margin-top: 50px;
+    background-image: url("/public/img/bg_info.png");
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size: cover;
+}
+
+.info-container{
+    display: flex;
+    padding: 20px;
+}
+
+.info-content{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.info-item{
+    background-position-x: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+.info-content-p{
+    margin: 10px 0px 10px 0;
+    font-size: 20px;
+}
+
+@media screen and (max-width:1100px) {
+    .info-content{
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+
+
+

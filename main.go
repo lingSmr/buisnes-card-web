@@ -1,16 +1,19 @@
 package main
 
 import (
-	"github.com/julienschmidt/httprouter"
+	"log"
 	"net/http"
 	"path"
 	"text/template"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 func main() {
 	r := httprouter.Router{}
 	routes(&r)
-	http.ListenAndServe(":8080", &r)
+	log.Println("Server started on port :9090!")
+	http.ListenAndServe(":9090", &r)
 }
 
 func routes(r *httprouter.Router) {

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/julienschmidt/httprouter"
 	"log"
 	"net/http"
-	"path"
-	"text/template"
+	"simple_visit_site/pages"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 func main() {
@@ -17,36 +17,9 @@ func main() {
 
 func routes(r *httprouter.Router) {
 	r.ServeFiles("/public/*filepath", http.Dir("public"))
-	r.GET("/", StartPage)
-	r.GET("/prikol", PrikolPage)
-}
-
-func StartPage(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	path := path.Join("public", "html", "StartPage.html")
-	tmpl, err := template.ParseFiles(path)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	err = tmpl.Execute(w, nil)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-}
-
-func PrikolPage(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	path := path.Join("public", "html", "prikol.html")
-	tmpl, err := template.ParseFiles(path)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
-	err = tmpl.Execute(w, nil)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
+	r.GET("/", pages.StartPage)
+	r.GET("/prikol", pages.PrikolPage)
+	r.GET("/photo/sanya", pages.SanyaPage)
+	r.GET("/photo/david", pages.DavidPage)
+	r.GET("/photo/green", pages.GreenPage)
 }

@@ -195,6 +195,23 @@ h1 , h2 , h3 {
     margin: 0 auto 0 auto;
 }
 
+.hero-stack{
+    font-size: 32px;
+
+}
+
+.stack-head{
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+}
+
+.stack-line{
+    margin:0;
+    border-radius: 3px;
+    width: 20%;   
+    border-bottom: 4px solid rgba(187, 187, 187, 0.226) ;
+}
+
 .border-line{
     margin: 0 auto 0 auto;
     border-radius: 3px;
@@ -259,6 +276,10 @@ h1 , h2 , h3 {
 }
 
 @media screen and (max-width:980px) {
+    .stack-line{
+        margin: 0 auto 0 auto;
+    }
+
     .info-container{
         padding-bottom: 0;
     }

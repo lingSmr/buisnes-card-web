@@ -19,6 +19,8 @@ h1 , h2 , h3 {
     margin: 0;
 }
 
+
+
 .header{
     width: 100%;
     padding-top: 20px;
@@ -33,11 +35,12 @@ h1 , h2 , h3 {
 
 .hero{
     margin-top: 0px;
-    margin-bottom: 60px;
-    min-height: 90vh; 
+    margin-bottom: 0px;
+    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("/public/img/hero_bg.jpg");
 }
 
 .container{
@@ -222,7 +225,7 @@ h1 , h2 , h3 {
 
 .info{
     min-height: 100vh;
-    margin-top: 10px;
+    margin-top: 0px;
     background-image: url("/public/img/bg_info.png");
     background-repeat: no-repeat;
     background-position:top;
